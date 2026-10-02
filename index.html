@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #111713;
+            color: #f2f2ec;
+            line-height: 1.7;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 7%;
+            border-bottom: 1px solid #303830;
+            position: sticky;
+            top: 0;
+            background: #111713;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #d77a4e;
+        }
+
+        section {
+            padding: 90px 7%;
+        }
+
+        .label {
+            color: #a9bd83;
+            letter-spacing: 4px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 35px;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: clamp(50px, 8vw, 90px);
+            line-height: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            color: #aeb4ad;
+            font-size: 18px;
+            max-width: 650px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 35px;
+            background: #c96b47;
+            color: white;
+            padding: 16px 30px;
+            border-radius: 35px;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background: #df805a;
+        }
+
+        .about {
+            border-top: 1px solid #303830;
+        }
+
+        .about h2,
+        .gallery h2,
+        .skills h2,
+        .contact h2 {
+            font-size: clamp(40px, 6vw, 65px);
+            line-height: 1;
+            margin-bottom: 30px;
+        }
+
+        .about p {
+            color: #aeb4ad;
+            max-width: 850px;
+            margin-bottom: 25px;
+            font-size: 17px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 35px;
+        }
+
+        .tag {
+            border: 1px solid #858d84;
+            padding: 9px 20px;
+            border-radius: 30px;
+            color: #ddd;
+        }
+
+        .gallery {
+            border-top: 1px solid #303830;
+        }
+
+        .gallery-intro {
+            color: #aeb4ad;
+            margin-bottom: 40px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .gallery-card {
+            background: #29342c;
+            padding: 18px;
+            border-radius: 8px;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 5px;
+            display: block;
+        }
+
+        .caption {
+            color: #aeb4ad;
+            margin-top: 15px;
+            letter-spacing: 2px;
+            font-size: 12px;
+        }
+
+        .skills {
+            border-top: 1px solid #303830;
+        }
+
+        .skills p {
+            color: #aeb4ad;
+            margin-bottom: 35px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill {
+            border: 1px solid #858d84;
+            padding: 12px 25px;
+            border-radius: 30px;
+        }
+
+        .contact {
+            background: #29342c;
+            margin: 50px 7%;
+            border-radius: 8px;
+        }
+
+        .contact p {
+            color: #aeb4ad;
+            max-width: 600px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #777;
+            border-top: 1px solid #303830;
+        }
+
+        @media (max-width: 700px) {
+            nav ul {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-card img {
+                height: 300px;
+            }
+
+            .contact {
+                margin: 30px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">Jemsey / 01</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <div class="label">PERSONAL PROFILE / 2026</div>
+
+            <h1>
+                Hello! I am<br>
+                Jemsey.
+            </h1>
+
+            <p>
+                A Criminology student focused on developing
+                knowledge, critical thinking, and a deeper
+                understanding of crime and society.
+            </p>
+
+            <a href="#about" class="button">About me ↗</a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT ME -->
+    <section class="about" id="about">
+
+        <div class="label">01 / ABOUT ME</div>
+
+        <h2>
+            Learning to understand people and society.<br>
+        </h2>
+
+        <p>
+            Hello! I’m Jemsey C. Sanchez, a Criminology student with a passion for learning about
+            crime, justice, and human behavior. I am someone who values discipline, responsibility,
+            and continuous learning. I enjoy discovering new things, developing my skills, and
+            gaining experiences that help me become a better version of myself.
+        </p>
+
+        <p>
+            As I continue my journey in Criminology, I hope to gain knowledge and experiences that
+            will prepare me for my future career. This portfolio is a collection of my experiences,
+            interests, skills, and achievements as I continue to learn and grow.
+        </p>
+
+        <div class="tags">
+            <span class="tag">Criminology</span>
+            <span class="tag">Human Behavior</span>
+            <span class="tag">Justice</span>
+            <span class="tag">Continuous Learning</span>
+        </div>
+
+    </section>
+
+
+    <!-- GALLERY -->
+    <section class="gallery" id="gallery">
+
+        <div class="label">02 / GALLERY</div>
+
+        <h2>Moments that shaped my journey.</h2>
+
+        <p class="gallery-intro">
+            A collection of academic, personal, and memorable
+            experiences that reflect my growth and the people
+            and activities that have been part of my journey.
+        </p>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-card">
+                <img src="https://via.placeholder.com/800x600"
+                     alt="Gallery photo">
+                <div class="caption">EXPERIENCE / 01</div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="https://via.placeholder.com/800x600"
+                     alt="Gallery photo">
+                <div class="caption">EXPERIENCE / 02</div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="https://via.placeholder.com/800x600"
+                     alt="Gallery photo">
+                <div class="caption">EXPERIENCE / 03</div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="https://via.placeholder.com/800x600"
+                     alt="Gallery photo">
+                <div class="caption">EXPERIENCE / 04</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section class="skills">
+
+        <div class="label">03 / SKILLS</div>
+
+        <h2>Skills and abilities.</h2>
+
+        <p>
+            Skills I continue to develop through education,
+            experiences, and everyday learning.
+        </p>
+
+        <div class="skill-list">
+            <span class="skill">Communication</span>
+            <span class="skill">Teamwork</span>
+            <span class="skill">Critical Thinking</span>
+            <span class="skill">Time Management</span>
+            <span class="skill">Attention to Detail</span>
+            <span class="skill">Adaptability</span>
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <div class="label">04 / CONTACT</div>
+
+        <h2>Contact<br>information.</h2>
+
+        <p>
+            For inquiries or opportunities to connect,
+            you may contact me using the details below.
+        </p>
+
+        <a href="mailto:your@email.com" class="button">
+            Contact me ↗
+        </a>
+
+    </section>
+
+
+    <footer>
+        © 2026 YOUR NAME — Criminology Portfolio
+    </footer>
+
+</body>
+</html>
